@@ -14,9 +14,9 @@ def call_llm(prompt: str) -> str:
         }
     ]
     response = client.chat.completions.create(
-        model="llama-3.3-70b-versatile",
+        model="qwen-2.5-32b",
         messages=messages,
-        temperature=0.0,
+        temperature=0.9,
         max_tokens=2048
     )
     return response.choices[0].message.content

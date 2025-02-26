@@ -137,6 +137,7 @@ Please provide a valid JSON response as specified in the original prompt:
                 response = re.sub(r'<think>.*?</think>', '', self.llm(retry_prompt), flags=re.DOTALL)
                 resp_dict = self.parser.parse(response)
                 if resp_dict.get("thought") and (resp_dict.get("action") or resp_dict.get("final_answer")):
+                    print(f"\n{15 * '='} LLM Response After Retrying {15 * '='}\n{response}\n\n")
                     return resp_dict
                 prev_response = response
         raise Exception("Max retries reached")
