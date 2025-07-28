@@ -4,7 +4,7 @@ from groq import Groq
 
 # You can define a function to make any llm call, it should take a string as input.
 def call_llm(prompt: str) -> str:
-    api_key = "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"
+    api_key = "api key"
     client = Groq(api_key=api_key)
 
     messages = [{"role": "user", "content": prompt}]
